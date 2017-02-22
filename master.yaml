@@ -71,13 +71,13 @@ Resources:
                 EnvironmentName: !Ref AWS::StackName
                 VPC: !GetAtt VPC.Outputs.VPC
                 Subnets: !GetAtt VPC.Outputs.PrivateSubnets
-                TheDBIdentifier: ''
-                TheDBName: ''
-                TheDBUser: ''
-                TheDBPassword: ''
+                TheDBIdentifier: 'pitondb8' # Your database Identifier
+                TheDBName: 'alpha8' # Leave it blank for now
+                TheDBUser: 'postgres' ## master admin user.  Will use <postgres>
+                TheDBPassword: 'postgres'  ## <PASSWORD>
                 TheDBAllocatedStorage: '5'
                 TheDBInstanceClass: 'db.t2.micro'
-                IsMultiAZDatabase: 'false'
+                IsMultiAZDatabase: 'false' # Change this if you want a multi-az deploy
 
     ProductService:
         Type: AWS::CloudFormation::Stack
